@@ -1,0 +1,93 @@
+.filter{
+  max-height: 295px;
+  grid-column: 4;
+  grid-row: 1;
+  background-color: #fff;
+  padding: 30px;
+
+  button{
+    margin-bottom: 10px;
+    border: none;
+    font-size: 14px;
+    font-style: oblique;
+    width: 250px;
+    height: 35px;
+  }
+  .filter__submit-button{
+    background-color: #0284c6;
+    color: #fff;
+  }
+  .filter__clear-button{
+    background-color: #f8f8f8;
+    color: #333;
+  }
+  .filter__title{
+    font-size: 17px;
+    color: #4a4a4a;
+  }
+  .filter-options{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+  }
+
+  .filter-option {
+    display: block;
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    font-style: oblique;
+    user-select: none;
+    input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+  }
+
+  /* Create a custom checkbox */
+
+  .filter-option__checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 14px;
+    width: 14px;
+    background-color: #ffffff;
+    box-shadow:inset 0 0 3px 1px rgba(0, 0, 0, 0.1);
+  }
+
+  /* On mouse-over, add a grey background color */
+
+  .filter-option {
+    &:hover input ~ .filter-option__checkmark {
+      background-color: #ccc;
+    }
+    input:checked ~ .filter-option__checkmark {
+      background-color: #2196F3;
+    }
+  }
+
+  .filter-option__checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  .filter-option {
+    input:checked ~ .filter-option__checkmark:after {
+      display: block;
+    }
+    .filter-option__checkmark:after {
+      left: 5px;
+      top: 2px;
+      width: 3px;
+      height: 7px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+  }
+}

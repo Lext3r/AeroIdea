@@ -1,0 +1,10 @@
+- var filterValues = ['Canon','Olympus','Fujifilm','Pentax','Nikon','Sigma','Panasonic','General Electrics','Leica','Zenit'];
+div(class='filter')
+    button(class='filter__submit-button' id="filter-submit") Показать результат
+    button(class='filter__clear-button' id='filter-clear') Очистить фильтр
+    div(class='filter__title') Производитель
+    div(class='filter-options')
+        each value in filterValues
+            label(class='filter-option')=value
+                input(type='checkbox' class='filter-option__title' id=value.toLowerCase())
+                span(class='filter-option__checkmark')
